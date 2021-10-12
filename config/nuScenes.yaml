@@ -1,0 +1,163 @@
+#                1           2           3           4
+transformation: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+adaption: "mergemesh"
+number_of_scans: 1
+preserve_float: True
+voxel_size: 0.05
+batch_interval: 10
+#              xmin xmax ymin ymax zmin zmax
+voxel_bounds: [-50, 50, -50, 50, -5, 5]
+ignore: [0, 31]
+moving:
+  [
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+  ]
+labels:
+  0: "noise"
+  1: "animal"
+  2: "human.pedestrian.adult"
+  3: "human.pedestrian.child"
+  4: "human.pedestrian.construction_worker"
+  5: "human.pedestrian.personal_mobility"
+  6: "human.pedestrian.police_officer"
+  7: "human.pedestrian.stroller"
+  8: "human.pedestrian.wheelchair"
+  9: "movable_object.barrier"
+  10: "movable_object.debris"
+  11: "movable_object.pushable_pullable"
+  12: "movable_object.trafficcone"
+  13: "static_object.bicycle_rack"
+  14: "vehicle.bicycle"
+  15: "vehicle.bus.bendy"
+  16: "vehicle.bus.rigid"
+  17: "vehicle.car"
+  18: "vehicle.construction"
+  19: "vehicle.emergency.ambulance"
+  20: "vehicle.emergency.police"
+  21: "vehicle.motorcycle"
+  22: "vehicle.trailer"
+  23: "vehicle.truck"
+  24: "flat.driveable_surface"
+  25: "flat.other"
+  26: "flat.sidewalk"
+  27: "flat.terrain"
+  28: "static.manmade"
+  29: "static.other"
+  30: "static.vegetation"
+  31: "vehicle.ego"
+  202: "human.pedestrian.adult.moving"
+  203: "human.pedestrian.child.moving"
+  204: "human.pedestrian.construction_worker.moving"
+  205: "human.pedestrian.personal_mobility.moving"
+  206: "human.pedestrian.police_officer.moving"
+  207: "human.pedestrian.stroller.moving"
+  208: "human.pedestrian.wheelchair.moving"
+  214: "vehicle.bicycle.moving"
+  215: "vehicle.bus.bendy.moving"
+  216: "vehicle.bus.rigid.moving"
+  217: "vehicle.car.moving"
+  218: "vehicle.construction.moving"
+  219: "vehicle.emergency.ambulance.moving"
+  220: "vehicle.emergency.police.moving"
+  221: "vehicle.motorcycle.moving"
+  222: "vehicle.trailer.moving"
+  223: "vehicle.truck.moving"
+color_map: # bgr #original nuScenes colors below
+  0: [0, 0, 0]
+  1: [70, 130, 180]
+  2: [0, 0, 230]
+  3: [135, 206, 235]
+  4: [100, 149, 237]
+  5: [219, 112, 147]
+  6: [0, 0, 128]
+  7: [255, 30, 30]
+  8: [240, 128, 128]
+  9: [138, 43, 226]
+  10: [112, 128, 144]
+  11: [210, 105, 30]
+  12: [105, 105, 105]
+  13: [47, 79, 79]
+  14: [188, 143, 143]
+  15: [220, 20, 60]
+  16: [255, 127, 80]
+  17: [255, 69, 0]
+  18: [255, 158, 0]
+  19: [233, 150, 70]
+  20: [255, 83, 0]
+  21: [255, 215, 0]
+  22: [255, 61, 99]
+  23: [255, 140, 0]
+  24: [255, 99, 71]
+  25: [0, 207, 191]
+  26: [175, 0, 75]
+  27: [75, 0, 75]
+  28: [112, 180, 60]
+  29: [222, 184, 135]
+  30: [255, 228, 196]
+  31: [0, 175, 0]
+  32: [200, 200, 200]
+  202: [0, 0, 25]
+  203: [0, 0, 25]
+  204: [0, 0, 25]
+  205: [0, 0, 25]
+  206: [0, 0, 25]
+  207: [0, 0, 25]
+  208: [0, 0, 25]
+  214: [0, 0, 255]
+  215: [0, 0, 150]
+  216: [0, 0, 150]
+  217: [0, 0, 75]
+  218: [0, 0, 255]
+  219: [0, 0, 255]
+  220: [0, 0, 255]
+  221: [0, 0, 255]
+  222: [0, 0, 255]
+  223: [0, 0, 255]
+#  1: [75, 0, 75]
+#  2: [255, 30, 30]
+#  3: [255, 40, 200]
+#  4: [150, 30, 90]
+#  5: [255, 30, 30]
+#  6: [255, 30, 30]
+#  7: [255, 30, 30]
+#  8: [255, 30, 30]
+#  9: [255, 240, 150]
+#  10: [255, 240, 150]
+#  11: [255, 240, 150]
+#  12: [255, 240, 150]
+#  13: [100, 230, 245]
+#  14: [100, 80, 250]
+#  15: [100, 80, 250]
+#  16: [100, 150, 245]
+#  17: [0, 0, 255]
+#  18: [10, 10, 240]
+#  19: [30, 30, 220]
+#  20: [30, 60, 150]
+#  21: [255, 240, 150]
+#  22: [80, 30, 180]
+#  23: [50, 255, 255]
+#  24: [60, 60, 60]
+#  25: [75, 0, 175]
+#  26: [75, 0, 75]
+#  27: [80, 240, 150]
+#  28: [0, 200, 255]
+#  29: [0, 150, 255]
+#  30: [0, 175, 0]
+#  31: [0, 0, 255]
+#  32: [245, 150, 100]

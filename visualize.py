@@ -10,7 +10,6 @@ from auxiliary.laserscanvis import LaserScanVis
 from auxiliary.tools import convert_range
 
 
-
 if __name__ == '__main__':
   parser = argparse.ArgumentParser("./lidar_deform.py")
   parser.add_argument(

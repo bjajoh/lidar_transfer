@@ -1,0 +1,44 @@
+[1mNAME[0m
+    export_kitti.py
+
+[1mSYNOPSIS[0m
+    export_kitti.py - [4mGROUP[0m | [4mCOMMAND[0m | [4mVALUE[0m
+
+[1mGROUPS[0m
+    [1m[4mGROUP[0m[0m is one of the following:
+
+     nusc
+       Database class for nuScenes to help query and retrieve information from the database.
+
+[1mCOMMANDS[0m
+    [1m[4mCOMMAND[0m[0m is one of the following:
+
+     kitti_res_to_nuscenes
+       Converts a KITTI detection result to the nuScenes detection results format.
+
+     nuscenes_gt_to_kitti
+       Converts nuScenes GT annotations to KITTI format.
+
+     render_kitti
+       Renders the annotations in the KITTI dataset from a lidar and a camera view.
+
+[1mVALUES[0m
+    [1m[4mVALUE[0m[0m is one of the following:
+
+     cam_name
+       Name of the camera to export. Note that only one camera is allowed in KITTI.
+
+     image_count
+       Number of images to convert.
+
+     lidar_name
+       Name of the lidar sensor.
+
+     nusc_kitti_dir
+       Where to write the KITTI-style annotations.
+
+     nusc_version
+       nuScenes version to use.
+
+     split
+       Dataset split to use.
