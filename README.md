@@ -60,6 +60,15 @@ $ make
 
 </details>
 
+##  Visualize Dataset
+
+```
+python visualize.py --dataset DATASET [--config CONFIG] [--sequence SEQUENCE] [--predictions PREDICTIONS] [--ignore_semantics] [--offset OFFSET]
+```
+```
+python visualize.py --dataset /Volumes/ssd/Datasets/MA/SemanticKITTI_original/dataset --sequence 08 --config config/lidar_transfer.yaml
+```
+
 ## Credits
 Developed by Ferdinand Langer, 2019.
 This tool uses the following open source software:
