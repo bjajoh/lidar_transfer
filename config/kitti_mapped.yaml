@@ -1,0 +1,81 @@
+#                1           2           3           4
+transformation: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+adaption: "mergemesh"
+number_of_scans: 1
+preserve_float: True
+voxel_size: 0.05
+batch_interval: 10
+#              xmin xmax ymin ymax zmin zmax
+voxel_bounds: [-50, 50, -50, 50, -5, 5]
+ignore: [0, 1]
+moving: [252, 253, 254, 255, 256, 257, 258, 259]
+labels:
+  0: "unlabeled"
+  1: "outlier"
+  10: "car"
+  11: "bicycle"
+  13: "bus"
+  15: "motorcycle"
+  16: "on-rails"
+  18: "truck"
+  20: "other-vehicle"
+  30: "person"
+  31: "bicyclist"
+  32: "motorcyclist"
+  40: "road"
+  44: "parking"
+  48: "sidewalk"
+  49: "other-ground"
+  50: "building"
+  51: "fence"
+  52: "other-structure"
+  60: "lane-marking"
+  70: "vegetation"
+  71: "trunk"
+  72: "terrain"
+  80: "pole"
+  81: "traffic-sign"
+  99: "other-object"
+  252: "moving-car"
+  253: "moving-bicyclist"
+  254: "moving-person"
+  255: "moving-motorcyclist"
+  256: "moving-on-rails"
+  257: "moving-bus"
+  258: "moving-truck"
+  259: "moving-other-vehicle"
+color_map: # bgr
+  0: [0, 0, 0]
+  1: [0, 0, 0]
+  10: [245, 150, 100]
+  11: [245, 230, 100]
+  13: [180, 30, 80]
+  15: [150, 60, 30]
+  16: [180, 30, 80]
+  18: [180, 30, 80]
+  20: [180, 30, 80]
+  30: [30, 30, 255]
+  31: [30, 30, 255]
+  32: [30, 30, 255]
+  40: [255, 0, 255]
+  44: [255, 0, 255]
+  48: [75, 0, 75]
+  49: [75, 0, 175]
+  50: [0, 200, 255]
+  51: [0, 200, 255]
+  52: [0, 0, 0]
+  60: [255, 0, 255]
+  70: [0, 175, 0]
+  71: [0, 175, 0]
+  72: [80, 240, 150]
+  80: [0, 200, 255]
+  81: [0, 200, 255]
+  99: [0, 0, 0]
+  252: [245, 150, 100]
+  256: [180, 30, 80]
+  253: [30, 30, 255]
+  254: [30, 30, 255]
+  255: [30, 30, 255]
+  257: [180, 30, 80]
+  258: [180, 30, 80]
+  259: [180, 30, 80]
