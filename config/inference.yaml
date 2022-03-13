@@ -1,0 +1,35 @@
+#                1           2           3           4
+transformation: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+adaption: "mergemesh"
+number_of_scans: 1
+preserve_float: True
+voxel_size: 0.05
+batch_interval: 10
+#              xmin xmax ymin ymax zmin zmax
+voxel_bounds: [-50, 50, -50, 50, -5, 5]
+ignore: []
+moving: []
+labels:
+  0: "person"
+  1: "road"
+  2: "sidewalk"
+  3: "terrain"
+  4: "other-ground"
+  5: "car"
+  6: "bicycle"
+  7: "motorcycle"
+  8: "other-vehicle"
+  9: "vegetation"
+  10: "infrastructure"
+color_map: # bgr
+  0: [30, 30, 255]
+  1: [255, 0, 255]
+  2: [75, 0, 75]
+  3: [80, 240, 150]
+  4: [75, 0, 175]
+  5: [245, 150, 100]
+  6: [245, 230, 100]
+  7: [150, 60, 30]
+  8: [180, 30, 80]
+  9: [0, 175, 0]
+  10: [0, 200, 255]
