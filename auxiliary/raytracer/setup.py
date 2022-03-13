@@ -11,7 +11,7 @@ if platform == "darwin":
   ext = Extension('RayTracerCython', sources=["RayTracerCython.pyx"],
                   language="c++",
                   include_dirs=[numpy.get_include(), '.'],
-                  extra_compile_args=["-std=c++14", '-O3', '-msse3', '-fPIC', '-march=native'])
+                  extra_compile_args=["-std=c++14", '-O3', "-march=native"])
 else:
   ext = Extension('RayTracerCython', sources=["RayTracerCython.pyx"],
                   language="c++",

@@ -355,7 +355,7 @@ class LaserScanVis():
 
   def get_action(self, timeout=0):
     # return action and void it to avoid reentry
-    vispy.app.use_app().sleep(timeout)
+    vispy.app.use_app().sleep(int(timeout))
     ret = self.action
     self.action = 'no'
     return ret

@@ -6,7 +6,10 @@
 import numpy as np
 from skimage import measure
 import auxiliary.raytracing as rt
-import auxiliary.raytracer.RayTracerCython as rtc
+try:
+  import auxiliary.raytracer.RayTracerCython as rtc
+except Exception as err:
+  print('Failed to import Cython RayTracer.')
 try:
   import pycuda.driver as cuda
   import pycuda.autoinit
