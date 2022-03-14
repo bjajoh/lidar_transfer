@@ -104,7 +104,7 @@ if __name__ == '__main__':
     if os.path.isdir(label_paths):
       print("Labels folder exists! Using labels from %s" % label_paths)
     else:
-      print("Labels folder doesn't exist! Exiting...")
+      print("Labels folder doesn't exist! Exiting...", label_paths)
       quit()
 
     # get label filenames
