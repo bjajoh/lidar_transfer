@@ -371,3 +371,14 @@ class LaserScanVis():
       self.diff_canvas.events.key_press.disconnect()
       self.diff_canvas.close()
     vispy.app.quit()
+
+
+
+
+
+
+
+
+
+
+
