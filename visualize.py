@@ -85,7 +85,7 @@ if __name__ == '__main__':
   if os.path.isdir(scan_paths):
     print("Sequence folder exists! Using sequence from %s" % scan_paths)
   else:
-    print("Sequence folder doesn't exist! Exiting...")
+    print("Sequence folder doesn't exist! Exiting... Check:", scan_paths)
     quit()
 
   # get pointclouds filenames
@@ -96,8 +96,10 @@ if __name__ == '__main__':
   # does label folder exist?
   if FLAGS.ignore_semantics is False:
     if FLAGS.predictions is not None:
-      label_paths = os.path.join(FLAGS.predictions, "sequences",
-                                 FLAGS.sequence, "predictions")
+      # label_paths = os.path.join(FLAGS.predictions, "sequences",
+      #                            FLAGS.sequence, "predictions")
+      label_paths = os.path.join(FLAGS.predictions)
+
     else:
       label_paths = os.path.join(FLAGS.dataset, "sequences",
                                  FLAGS.sequence, "labels")
@@ -182,7 +184,20 @@ if __name__ == '__main__':
   idx = FLAGS.offset
 
   choice = "no"
+  video_scene = -1
+  #fov, scale, azimuth, elevation
+  video_scenes = {0: [45.0, 19.0, -50.0, 33.0],
+                  1: [0.0, 67.0, -50.0, 33.0],
+                  2: [45.0, 21.0, 0.0, 90.0],
+                  3: [0.0, 16.7, -137.0, 21.0],
+                  4: [15.0, 12.5, -90.0, 0.0],}
+  run_video = False
+
   while True:
+    print('index', idx)
+    if idx is 0:
+      video_scene = video_scene + 1
+      print('next video scene nr.:', video_scene)
     if choice != "change":
       t0_elapse = time.time()
 
@@ -211,22 +226,37 @@ if __name__ == '__main__':
     if FLAGS.ignore_semantics is False:
       data = convert_range(scan.proj_range)
 
-    # get user choice
-    while True:
-      choice = vis.get_action(0.01)
-      if choice != "no":
-        break
-    if choice == "next":
+    #set scenes for videos
+    try:
+      fov, scale, azimuth, elevation = video_scenes[video_scene]
+    except:
+      print('Could not get scene setting! Maybe done?')
+      # vis.destroy()
+    vis.set_camera_3d(fov=fov, scale_factor=scale, azimuth=azimuth, elevation=elevation)
+
+    # start video scenes after pressing next "N" the first time
+    if run_video is False:
+      run_video = True
+      # get user choice
+      while True:
+        choice = vis.get_action(0.01)
+        if choice != "no":
+          break
+      if choice == "next":
+        # take into account that we look further than one scan
+        idx = (idx + 1) % (len(scan_names) - 1)
+        continue
+      if choice == "back":
+        idx -= 1
+        if idx < 0:
+          idx = len(scan_names) - 1
+        continue
+      elif choice == "change":
+        continue
+      elif choice == "quit":
+        print()
+      break
+    else:
       # take into account that we look further than one scan
+      choice = vis.get_action(0.01)
       idx = (idx + 1) % (len(scan_names) - 1)
-      continue
-    if choice == "back":
-      idx -= 1
-      if idx < 0:
-        idx = len(scan_names) - 1
-      continue
-    elif choice == "change":
-      continue
-    elif choice == "quit":
-      print()
-    break

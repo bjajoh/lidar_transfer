@@ -35,7 +35,7 @@ class LaserScanVis():
 
     # 3D canvas
     self.scan_canvas = SceneCanvas(keys='interactive', show=True, title='',
-                                   size=(1600, 600), bgcolor='white')
+                                   size=(1920, 1080), bgcolor='white')
     self.scan_canvas.events.key_press.connect(self.key_press)
     self.grid_view = self.scan_canvas.central_widget.add_grid()
 
@@ -44,6 +44,12 @@ class LaserScanVis():
         border_color='white', parent=self.scan_canvas.scene)
     self.scan_vis = visuals.Markers()
     self.scan_view.camera = 'turntable'
+    # self.scan_view.camera.fov = 120.0
+    # self.scan_view.camera.elevation=30.0
+    # self.scan_view.camera.azimuth=30.0
+    # self.scan_view.camera.roll=0.0
+    # self.scan_view.camera.distance=None 
+    # self.scan_view.camera.translate_speed=1.0
     self.scan_view.add(self.scan_vis)
     visuals.XYZAxis(parent=self.scan_view.scene)
     self.grid_view.add_widget(self.scan_view, 0, 0)
@@ -308,6 +314,21 @@ class LaserScanVis():
                            edge_color=colors[..., ::-1],
                            size=self.point_size)
     self.scan_vis.update()
+
+  def set_camera_3d(self, scale_factor=None, fov=None, elevation=None, azimuth=None, roll=None, distance=None, translate_speed=None):
+    # print('elevation: ', self.scan_view.camera.elevation)
+    # print('azimuth: ', self.scan_view.camera.azimuth)
+    # print('scale_factor: ', self.scan_view.camera.scale_factor)
+    # print('fov: ', self.scan_view.camera.fov)
+
+    if fov is not None:
+      self.scan_view.camera.fov = fov
+    if elevation is not None:
+      self.scan_view.camera.elevation = elevation
+    if azimuth is not None:
+      self.scan_view.camera.azimuth = azimuth
+    if scale_factor is not None:
+      self.scan_view.camera.scale_factor = scale_factor
 
   def set_target_3d(self, scan_target):
     points = scan_target.back_points
